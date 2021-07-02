@@ -2,42 +2,9 @@
   <a href="#" id="pull"></a>
   <ul>
     {% for nav in collections.nav %}
-    <li class="{% if nav.url == page.url %} active{% endif %}">
-      <!-- <a href="{{ nav.url | url }}">{{ nav.data.navTitle }}</a> -->
-      <a href="{{ nav.url }}">{{ nav.data.navTitle }}</a>
+    <li class="{% if nav.url == page.url %}active{% endif %}">
+      <a href="{{ nav.url }}"> {{ nav.data.navTitle }} </a>
     </li>
-    {%- endfor -%}
+    {% endfor %}
   </ul>
 </nav>
-
-
-nav ul {
-  // display: none;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  background-color: $link;
-}
-
-nav a {
-  padding: 1rem;
-  color: #fff;
-  display: inline-block;
-  width: 100%;
-  box-sizing: border-box;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-nav li:hover:not(.active) {
-  background-color: lighten($link, 10%);
-}
-
-nav .active {
-  background-color: darken($link, 10%);
-}
-
-nav .active a {
-  font-weight: bold;
-}
